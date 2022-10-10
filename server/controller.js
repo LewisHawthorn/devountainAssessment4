@@ -18,23 +18,24 @@ module.exports = {
       
         res.status(200).send(randomFortune);
     },
-//     postMessage: function post(req, res) {
-//     // event.preventDefault()
-//     console.log("test2")
-//     const newMessage = document.createElement("p")
-//     const node = document.createTextNode(req.body.data)
-//     document.getElementById("newMessage").appendChild(node)
-//     document.getElementById("posts").appendChild(newMessage)
-//     res.status(200).send
-//     }    
+    postMessage: function post(req, res) {
+    // event.preventDefault()
+    console.log("test2")
+    const newMessage = document.createElement("p")
+    const node = document.createTextNode(req.body.data)
+    document.getElementById("newMessage").appendChild(node)
+    document.getElementById("posts").appendChild(newMessage)
+    res.status(200).send
+    },    
 
 clearMessages = (req,res) => {
     document.getElementById("posts").innerHTML = '';
     res.status(200).send
-    }
-countMessages: (req, res) => {
-messageNum = document.getElementById("posts").childElementCount;
-      
-        res.status(200).send(messageNum);
+    },
 
+countMessages: (req, res) => {
+    messageNum = document.getElementById("posts").childElementCount;
+     res.status(200).send(messageNum);
+
+}
 }
