@@ -9,7 +9,7 @@
     <form>
       <label for="message">Post a Message</label><br>
       <input type="text" id="message" name="message"><br>
-      <button id="post" type="submit">Post Message</button>
+      <button id="post" type="submit" onclick="event.preventDefault()">Post Message</button>
       <!-- <label for="clear">Clear all messages</label><br> -->
       <!-- <input type="text" id="message" name="message"><br> -->
     </form>
@@ -17,6 +17,7 @@
     <div id="posts"><p>initial post</p></div>
     <button id="countMessages">Count the messages</button><br>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="../node_modules/axios/dist/axios.min.js"></script> -->
     <script src="main.js"></script>
     
   </body>

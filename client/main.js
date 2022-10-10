@@ -23,6 +23,7 @@ const getFortune = () => {
 fortuneBtn.addEventListener('click', getFortune)
 
 const postBtn = document.getElementById("post")
+
 const postMessage = () => {
     console.log("testing1")
     axios.post("http://localhost:4000/api/post/")
@@ -30,18 +31,13 @@ const postMessage = () => {
             alert("Your message has been posted.");
     });
 };
-
-postBtn.addEventListener("submit", function(event) {event.preventDefault();});
-
-
-
-
-
+postBtn.addEventListener("submit", postMessage)
+// postBtn.addEventListener("submit", function(event){event.preventDefault();});
 
 const clearBtn = document.getElementById("clear")
 
 const clearMessages = () => {
-    axios.delete("http://localhost:4000/api/messages/")
+    axios.delete("http://localhost:4000/api/clear/")
         .then(res => {
             const data = res.data;
             alert("Messages have been deleted.");
@@ -52,7 +48,7 @@ clearBtn.addEventListener("click", clearMessages)
 const countBtn = document.getElementById("countMessages")
 
 const countMessages = () => {
-    axios.get("http://localhost:4000/api/messages/")
+    axios.get("http://localhost:4000/api/count/")
         .then(res => {
             const data = res.data;
             alert(`There are ${data} messages.`);
